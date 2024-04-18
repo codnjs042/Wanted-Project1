@@ -3,7 +3,7 @@ import React from 'react';
 // import Item from '../components/Item';
 import instance from '../../network/axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { getList } from '../../redux/slices/list';
+import { getList, getItem } from '../../redux/slices/list';
 import { Link } from 'react-router-dom'; 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
             {list_arr.map((item) => {
                 return(
                     <div key={item.id}>
-                        <Link to="/detail" onClick={() => {dispatch(getList([item]))}}>
+                        <Link to="/detail" onClick={() => {dispatch(getItem([item]))}}>
                             {item.number} {item.title}
                         </Link>
                         {item.user.login} {item.created_at} {item.comments} 
