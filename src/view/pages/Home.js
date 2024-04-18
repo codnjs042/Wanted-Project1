@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import Item from '../components/Item';
-import instance from '../../network/axios';
 import {allInstance} from '../../network/axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { getList } from '../../redux/slices/list';

@@ -23,8 +23,8 @@ export const allInstance = async() => {
     let page=1;
     while(true){
         const data = await instance("", page);
-        if(data.length==0) break;
-        const openedData = data.filter(item => item.state == "open");
+        if(data.length===0) break;
+        const openedData = data.filter(item => item.state === "open");
         const sortedData = openedData.sort((a, b) => {
             return b.comments - a.comments;
         })

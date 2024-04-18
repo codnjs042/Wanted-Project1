@@ -24,7 +24,7 @@ const Item = ({arr}) => {
                                     {content}
                                 </Link>
                                 <hr/>
-                                {(index % 4 == 0 && index !== 0) && <Ad />}
+                                {(index % 4 === 0 && index !== 0) && <Ad />}
                             </>
                         ) : (
                             <>
