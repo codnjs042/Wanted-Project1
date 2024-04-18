@@ -24,7 +24,11 @@ export const allInstance = async() => {
     while(true){
         const data = await instance("", page);
         if(data.length==0) break;
-        allData.push(...data);
+        const openedData = data.filter(item => item.state == "open");
+        const sortedData = openedData.sort((a, b) => {
+            return b.comments - a.comments;
+        })
+        allData.push(...sortedData);
         page++;
     }
     return allData;
