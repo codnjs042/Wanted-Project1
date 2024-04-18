@@ -1,13 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getItem } from '../../redux/slices/list';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 //import Ad from '../components/Ad';
 
 const Item = ({arr}) => {
     const list_arr = useSelector((state) => state.list.list_arr);
-    const dispatch = useDispatch();
-
+    
     return (
         <div>
             {arr.map((item, index) => {
@@ -22,7 +20,7 @@ const Item = ({arr}) => {
                     <div key={item.id}>
                         {arr === list_arr ? (
                             <>
-                                <Link to="/detail" onClick={() => dispatch(getItem([item]))}>
+                                <Link to={`/detail/${item.number}`}>
                                     {content}
                                 </Link>
                                 <hr/>
