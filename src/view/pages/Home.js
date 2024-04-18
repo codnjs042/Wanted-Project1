@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import Item from '../components/Item';
 import instance from '../../network/axios';
+import {allInstance} from '../../network/axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { getList } from '../../redux/slices/list';
 import nameContext from '../../context/nameContext';
@@ -11,7 +12,7 @@ const Home = () => {
     console.log("list_arr", list_arr);
     const dispatch = useDispatch();
     React.useEffect(() => {
-        instance().then(item => dispatch(getList(item)));
+        allInstance().then(item => dispatch(getList(item)));
     },[dispatch]);
 
     return (

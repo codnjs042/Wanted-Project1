@@ -13,7 +13,7 @@ const Detail = () => {
     console.log("item_arr", item_arr);
     const dispatch = useDispatch();
     useEffect(() => {
-        instance(`/${number}`).then(item => dispatch(getItem([item])));
+        instance(number).then(item => dispatch(getItem([item])));
     },[dispatch, number]);
 
     return (
