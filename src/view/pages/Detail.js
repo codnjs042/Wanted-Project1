@@ -1,4 +1,5 @@
 import React from 'react';
+import Item from '../components/Item';
 import {useSelector} from 'react-redux';
 
 const Detail = () => {
@@ -8,16 +9,7 @@ const Detail = () => {
     return (
         <div>
             <h1>상세화면</h1>
-            {item_arr.map((item) => {
-                return(
-                    <div key={item.id}>
-                        <img src={item.user.avatar_url} alt="profile" />
-                        {item.number} {item.title}
-                        {item.user.login} {item.created_at} {item.comments}
-                        {item.body}
-                    </div>
-                );
-            })}
+            <Item arr={item_arr} />
         </div>
     );
 }
