@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-//import Ad from '../components/Ad';
+import Ad from '../components/Ad';
 
 const Item = ({arr}) => {
     const list_arr = useSelector((state) => state.list.list_arr);
@@ -24,6 +24,7 @@ const Item = ({arr}) => {
                                     {content}
                                 </Link>
                                 <hr/>
+                                {(index % 4 == 0 && index !== 0) && <Ad />}
                             </>
                         ) : (
                             <>
