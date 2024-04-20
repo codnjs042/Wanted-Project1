@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Ad from '../components/Ad';
+import ReactMarkdown from 'react-markdown';
 
 const Item = ({arr}) => {
     const list_arr = useSelector((state) => state.list.list_arr);
@@ -31,7 +32,7 @@ const Item = ({arr}) => {
                                 <img src={item.user.avatar_url} alt="profile" />
                                 {content}
                                 <hr/>
-                                {item.body}
+                                <ReactMarkdown>{item.body}</ReactMarkdown>
                             </>
                         )}
                     </div>
