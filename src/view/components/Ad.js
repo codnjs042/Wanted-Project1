@@ -4,7 +4,9 @@ const Ad = () => {
 
     return (
         <div>
-            <img src="ad.jpg" alt="advert" />
+            <a href="https://www.wanted.co.kr/">
+                <img src="ad.jpg" alt="advert" />
+            </a>
         </div>
     );
 }
