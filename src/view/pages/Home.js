@@ -18,7 +18,7 @@ const Home = () => {
             dispatch(getList(item));
             const endTime = performance.now();
             const elapsedTime = endTime - startTime;
-            console.log("Render Time:", elapsedTime); // 병렬 요청을 통해 렌더링 작업을 3.6초에서 0.5초로 단축 : 약 86% 성능 향상
+            console.log("Render Time:", elapsedTime); // 병렬 요청을 통해 렌더링 작업을 3.6초에서 0.1초로 단축 : 약 97% 성능 향상
         });
     }, [dispatch]);
 

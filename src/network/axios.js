@@ -30,12 +30,11 @@ export const allInstance = async () => {
     // 병렬 요청 실행 및 데이터 수집
     const responses = await Promise.all(promises);
     responses.forEach(data => {
-        const openedData = data.filter(item => item.state === "open");
-        const sortedData = openedData.sort((a, b) => b.comments - a.comments);
-        allData.push(...sortedData);
+        allData.push(...data);
     });
-
-    return allData;
+    const openedData = allData.filter(item => item.state === "open");
+    const sortedData = openedData.sort((a, b) => b.comments - a.comments);
+    return sortedData;
 }
 
 export default instance;
