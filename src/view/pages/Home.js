@@ -4,6 +4,7 @@ import {allInstance} from '../../network/axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { getList } from '../../redux/slices/list';
 import nameContext from '../../context/nameContext';
+import { StyledHeader } from '../styles/styled-components';
 
 const Home = () => {
     const {organ, repos} = useContext(nameContext);
@@ -23,7 +24,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1>{organ} / {repos}</h1>
+            <StyledHeader>{organ} / {repos}</StyledHeader>
             <Item arr={list_arr} />
         </div>
     );

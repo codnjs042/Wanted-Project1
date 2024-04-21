@@ -5,6 +5,7 @@ import nameContext from '../../context/nameContext';
 import { useParams } from 'react-router-dom';
 import instance from '../../network/axios';
 import { getItem } from '../../redux/slices/list';
+import { StyledHeader } from '../styles/styled-components';
 
 const Detail = () => {
     const {number} = useParams();
@@ -18,7 +19,7 @@ const Detail = () => {
 
     return (
         <div>
-            <h1>{organ} / {repos}</h1>
+            <StyledHeader>{organ} / {repos}</StyledHeader>
             <Item arr={item_arr} />
         </div>
     );
